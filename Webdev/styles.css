@@ -1,0 +1,46 @@
+body {
+  background-color: #e8e8e8;
+}
+
+h1 {
+  color: grey;
+  font-weight: lighter;
+  letter-spacing: 10px;
+}
+
+hr {
+  border-style: none none dotted;
+  border-width: 5px;
+  border-color: #5588a3;
+  opacity: 0.5;
+  width: 3%;
+}
+
+.nombre {
+  color: #5588a3;
+  letter-spacing: normal;
+}
+
+p {
+  color: grey;
+}
+
+h3 {
+  color: #5588a3;
+}
+
+th {
+  color: #00334e;
+}
+
+td {
+  color: grey;
+}
+
+li {
+  color: grey;
+}
+
+.getname {
+  color: #00334e;
+}
