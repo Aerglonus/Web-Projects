@@ -1,0 +1,88 @@
+/*.startup {
+  background-image: url("bgimage.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+} */
+h1 {
+  font-family: Oswald;
+}
+
+h3 {
+  font-family: Lexend Exa;
+  text-align: center;
+}
+
+.brand .h1-seo {
+  font-size: 4rem;
+  margin-bottom: .5rem;
+}
+
+.brand {
+  animation-name: fadeIn;
+  animation-duration: 1.1s;
+}
+
+h4 {
+  margin: 0;
+  font-family: Lexend Exa;
+}
+
+@media screen and (max-width: 500px) {
+  .brand .h1-seo {
+    font-size: 2.2rem;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: .25;
+  }
+
+  50% {
+    opacity: .50;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.navbar .navbar-nav .nav-link:not(.btn) i.fa {
+  font-size: 20px;
+  position: relative;
+  top: 3px;
+  text-align: center;
+  width: 21px;
+}
+
+.index-page .page-header .container>.content-center {
+  top: 50%;
+}
+
+.bg-primary {
+  background: #0c1830 !important;
+}
+
+.sidebar-collapse .navbar-collapse {
+  background: #000;
+}
+
+.sidebar-collapse .navbar-collapse::before {
+  background: linear-gradient(#0c1830, #131313 80%);
+}
+
+h2 {
+  padding-bottom: 70px;
+  font-family: Lexend Exa;
+}
+
+.section {
+  padding: 55px 0;
+  position: relative;
+  background: #FFFFFF;
+}
