@@ -65,7 +65,7 @@ h4 {
 }
 
 .bg-primary {
-  background: #0c1830 !important;
+  background: #000000 !important;
 }
 
 .sidebar-collapse .navbar-collapse {
@@ -89,4 +89,8 @@ h2 {
 .container-fluid {
   padding-right: 0%;
   padding-left: 0%;
+  background-color: #131313;
+}
+h1, h2, h3, h4, p {
+  color: white;
 }
