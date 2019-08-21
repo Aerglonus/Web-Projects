@@ -4,6 +4,9 @@
   background-size: cover;
   height: 100%;
 } */
+body, html { 
+  font-family: Lexend Exa;
+}
 h1 {
   font-family: Oswald;
 }
