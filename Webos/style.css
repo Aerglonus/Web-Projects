@@ -5,7 +5,8 @@
   height: 100%;
 } */
 body, html { 
-  font-family: Lexend Exa;
+ font-size: 0.9rem;
+ font-family: 'Courier New', Courier, monospace;
 }
 h1 {
   font-family: Oswald;
