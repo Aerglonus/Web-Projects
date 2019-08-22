@@ -1,0 +1,276 @@
+/*--Main Color--*
+ top color:#201D1D
+ intro:#92CCA3
+ /
+
+
+
+/*---Global---*/
+*{
+    margin:0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    width: 100%;
+}
+h1{
+    font-size:48px;
+    font-weight: 100;
+    color:#201D1D;
+}
+h2 {
+    font-size:35px;
+    color:#92CCA3 !important;
+    font-weight: 300;
+}
+p{
+    font-size: 25px;
+}
+.btnOutline{
+    display: block;
+    border:2px solid #92CCA3;
+    text-decoration: none;
+    color:#92CCA3;
+    padding: 0 5px;
+    border-radius: 6px;
+    width: 172px;
+    height: 57px;
+    line-height: 57px;
+    text-align: center;
+    margin-top:30px;
+}
+.btnOutline:hover{
+    color:white;
+    background-color: #92CCA3;
+}
+
+/*---Navbar---*/
+nav{
+    line-height: 150px;
+}
+nav a{
+    text-decoration: none;
+    color:#201D1D;
+    font-size:28px;
+    font-weight: 600;
+}
+
+/*---Header---*/
+header{
+    height: 1000px;
+    min-height: 1000px;
+    padding: 0 5%;
+    background-image: url(img/header_right.png);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: 20%;
+    background-size: unset;
+}
+header h1{
+    width: 40%;
+    margin: 5em 0 0 0;
+}
+/*---Intro---*/
+#intro{
+    text-align: center;
+    margin: 0 auto;
+
+}
+#intro h2{
+    background-image: url(img/intro_back.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30%;
+    margin: 0 auto;
+}
+#intro a{
+    color:white;
+    display: block;
+    text-decoration: none;
+    font-size:24px;
+    background-color: #92CCA3;
+    border:2px solid #92CCA3;
+    width: 197px;
+    padding: 0 10px;
+    margin: 30px auto 0 auto;
+    border-radius: 6px;
+}
+#intro a:hover{
+    color:#92CCA3;
+    background-color: white;
+}
+.block{
+    background-image: url(img/intro_back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 37%;
+    height: 20%;  
+    position: absolute;
+    left: 20%;
+    z-index:-1 ;
+}
+.table_content{
+    margin: 0 auto;
+}
+.table_content p{
+    font-size: 25px;
+    text-align: center;
+    width: 30%;
+    margin: 2em auto 2em auto;
+    color:#92CCA3 !important;
+}
+/*--Team---*/
+
+.team{
+    background-image: url(img/main_left.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+    margin: 30em 0 5em 0;
+    height: 600px;
+}
+.team_img{
+    margin-left:70%;
+    padding-top: 100px;
+}
+.team_img h3,p{
+    width: 200px;
+
+text-align: center;
+}
+.team_img p{
+    font-size: 20px;
+
+font-weight: 100;
+
+}
+.team img{
+    width: 200px;
+}
+.team_img .block{
+    left: 60%;
+}
+
+/*---Join---*/
+.join h1{
+    text-align: center;
+
+}
+.join{
+
+    height: 650px;
+    min-height: 650px;
+    background-image: url(img/footer_bottom_right.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    width: 100%;
+
+}
+/*---Overwritting Tims CSS--*/
+.container{
+    padding: 0 5%;
+    max-width: 100%;
+}
+.navbar.navbar-transparent {
+
+    background-color: transparent !important;
+    box-shadow: none;
+    color: #2c2626;
+    padding-top: 20px !important;
+
+}
+.bg-primary {
+
+    background-color: #fff !important;
+
+}
+/*---Media queries---*/
+@media only screen and (max-width: 600px) {
+ header
+ {
+    background-image: url(img/header_right.png);
+    background-repeat: no-repeat;
+    background-position:top right;
+    background-size: 60%;
+    height: 500px;
+
+    min-height: 500px;
+ }  
+ header h1
+ {
+    font-size: 2.5em;
+ }
+ nav a
+ {
+    position: absolute;
+    margin: -7em 3em;
+    width: 100vw;
+ }
+ #intro
+ {
+    padding: 0 5%;
+ }
+ #intro h2
+ {
+     width: 100%;
+ }
+ .block
+ {
+    background-size: 80%;
+    width: 100%;
+ }
+ .table_content p
+ {
+     width: 100%;
+ }
+ .team
+ {
+    background-size:60%;
+    height: 1000px;
+    margin: 0 auto;
+ }
+ .team_img
+ {
+    margin: 0 auto;
+    display: table;
+ }
+ .team_img img
+ {
+     margin-top:20em;
+ }
+ .join
+ {
+     background-size:90%;
+     height: 450px;
+     min-height:450px;
+
+ }
+ #mc_embed_signup_scroll {
+
+    width: 50% !important;
+    float: right !important;
+
+}
+#mc_embed_signup label {
+    color: #fff !important;
+
+font-size: 25px !important;
+
+margin-top: 100% !important;
+
+    display: block !important;
+    font-weight: 200 !important;
+
+}
+#mc_embed_signup {
+    width: 90% !important;
+    margin: 0 auto 0 auto !important;
+}
+}
