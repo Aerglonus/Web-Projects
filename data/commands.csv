@@ -1,0 +1,468 @@
+COMMAND,,,DESCRIPTION,USAGE
+.delmsgoncmd / .dmc,,,"Toggles the automatic deletion of the user's successful command message to prevent chat flood. You can use it either as a server toggle, channel whitelist, or channel blacklist, as channel option has 3 settings: Enable (always do it on this channel), Disable (never do it on this channel), and Inherit (respect server setting). Use list parameter to see the current states.",.dmc / .dmc channel enable / .dmc ch inherit / .dmc list
+.deafen / .deaf,,,Deafens mentioned user or users.,".deaf ""@Someguy"" / .deaf ""@Someguy"" ""@Someguy"""
+.undeafen / .undef,,,Undeafens mentioned user or users.,".undef ""@Someguy"" / .undef ""@Someguy"" ""@Someguy"""
+.delvoichanl / .dvch,,,Deletes a voice channel with a given name.,.dvch VoiceChannelName
+.creatvoichanl / .cvch,,,Creates a new voice channel with a given name.,.cvch VoiceChannelName
+.deltxtchanl / .dtch,,,Deletes a text channel with a given name.,.dtch TextChannelName
+.creatxtchanl / .ctch,,,Creates a new text channel with a given name.,.ctch TextChannelName
+.settopic / .st,,,Sets a topic on the current channel.,.st My new topic
+.setchanlname / .schn,,,Changes the name of the current channel.,.schn NewName
+.edit,,,"Edits bot's message, you have to specify message ID and new text. Supports embeds.",.edit 7479498384 Hi :^)
+.autoassignrole / .aar,,,Automaticaly assigns a specified role to every user who joins the server. Provide no parameters to disable.,.aar / .aar RoleName
+.sqlselect,,,Executes provided sql query and returns the results. Dangerous.,.sqlselect SELECT * FROM DiscordUser LIMIT 5
+.sqlexec,,,Executes provided sql command and returns the number of affected rows. Dangerous.,.sqlexec UPDATE DiscordUser SET CurrencyAmount=CurrencyAmount+1234
+.deletewaifus,,,"Deletes everything from WaifuUpdates, WaifuItem and WaifuInfo tables.",.deletewaifus
+.deletewaifu,,,"Deletes everything from WaifuUpdates, WaifuItem and WaifuInfo tables for the specified user. Also makes specified user's waifus free.",.deletewaifus
+.deletecurrency,,,Deletes everything from Currency and CurrencyTransactions.,.deletecurrency
+.deleteplaylists,,,Deletes everything from MusicPlaylists.,.deleteplaylists
+.deleteexp,,,deleteexp,deleteexp
+.gvc,,,"Toggles game voice channel feature in the voice channel you're currently in. Users who join the game voice channel will get automatically redirected to the voice channel with the name of their current game, if it exists. Can't move users to channels that the bot has no connect permission for. One per server.",.gvc
+.languageset / .langset,,,"Sets this server's response language. If bot's response strings have been translated to that language, bot will use that language in this server. Reset by using default as the locale name. Provide no parameters to see currently set language.",.langset de-DE / .langset default
+.langsetdefault / .langsetd,,,Sets the bot's default response language. All servers which use a default locale will use this one. Setting to default will use the host's current culture. Provide no parameters to see currently set language.,.langsetd en-US / .langsetd default
+.languageslist / .langli,,,List of languages for which translation (or part of it) exist atm.,.langli
+.logserver,,,"Enables or Disables ALL log events. If enabled, all log events will log to this channel.",.logserver enable / .logserver disable
+.logignore,,,Toggles whether the .logserver command ignores this channel. Useful if you have hidden admin channel and public log channel.,.logignore
+.logevents,,,Shows a list of all events you can subscribe to with .log,.logevents
+.log,,,Toggles logging event. Disables it if it is active anywhere on the server. Enables if it isn't active. Use .logevents to see a list of all events you can subscribe to.,.log userpresence / .log userbanned
+.setmuterole,,,Sets a name of the role which will be assigned to people who should be muted. Default is nadeko-mute.,.setmuterole Silenced
+.mute,,,Mutes a mentioned user both from speaking and chatting. You can also specify time string for how long the user should be muted.,.mute @Someone / .mute 1h30m @Someone
+.unmute,,,Unmutes a mentioned user previously muted with .mute command.,.unmute @Someone
+.chatmute,,,Prevents a mentioned user from chatting in text channels.,.chatmute @Someone
+.chatunmute,,,Removes a mute role previously set on a mentioned user with .chatmute which prevented him from chatting in text channels.,.chatunmute @Someone
+.voicemute,,,Prevents a mentioned user from speaking in voice channels.,.voicemute @Someone
+.voiceunmute,,,Gives a previously voice-muted user a permission to speak.,.voiceunmute @Someguy
+.rotateplaying / .ropl,,,Toggles rotation of playing status of the dynamic strings you previously specified.,.ropl
+.addplaying / .adpl,,,"Adds a specified string to the list of playing strings to rotate. You have to pick either 'Playing', 'Watching' or 'Listening' as the first parameter.",.adpl Playing with you / .adpl Watching you sleep
+.listplaying / .lipl,,,Lists all playing statuses with their corresponding number.,.lipl
+.removeplaying / .rmpl,,,Removes a playing string on a given number.,.rmpl
+.prefix,,,Sets this server's prefix for all bot commands. Provide no parameters to see the current server prefix. Setting prefix requires Administrator server permission.,.prefix +
+.defprefix,,,Sets bot's default prefix for all bot commands. Provide no parameters to see the current default prefix. This will not change this server's current prefix.,.defprefix +
+.antiraid,,,"Sets an anti-raid protection on the server. Provide no parameters to disable. First parameter is number of people which will trigger the protection. Second parameter is a time interval in which that number of people needs to join in order to trigger the protection, and third parameter is punishment for those people (Kick, Ban, Mute)",.antiraid 5 20 Kick / .antiraid
+.antispam,,,"Stops people from repeating same message X times in a row. Provide no parameters to disable. You can specify to either mute, kick or ban the offenders. If you're using mute, you can add a number of seconds at the end to use a timed mute. Max message count is 10.",.antispam 3 Mute / .antispam 4 Kick / .antispam
+.antispamignore,,,Toggles whether antispam ignores current channel. Antispam must be enabled.,.antispamignore
+.antilist / .antilst,,,Shows currently enabled protection features.,.antilist
+.prune / .clear,,,.prune removes all Nadeko's messages in the last 100 messages. .prune X removes last X number of messages from the channel (up to 100). .prune @Someone removes all Someone's messages in the last 100 messages. .prune @Someone X removes last X number of 'Someone's' messages in the channel. You can use the -s / --safe parameter at the end to only prune messages that are not pinned.,.prune / .prune -s / .prune 5 / .prune 5 --safe / .prune @Someone / .prune @Someone --safe / .prune @Someone X / .prune @Someone X -s
+.reactionroles / .rero,,,"Specify role names and server emojis with which they're represented, the bot will then add those emojis to the previous message in the channel, and users will be able to get the roles by clicking on the emoji. You can set 'excl' as the first parameter to make them exclusive. You can have up to 5 of these enabled on one server at a time.",.reactionroles Gamer :SomeServerEmoji: Streamer :Other: Watcher :Other2: / .reactionroles excl Horde :Horde: Alliance :Alliance:
+.reactionroleslist / .reroli,,,Lists all ReactionRole messages on this channel and their indexes.,.reactionroleslist
+.reactionrolesremove / .rerorm,,,Removed a ReactionRole message on the specified index.,.rerorm 1
+.setrole / .sr,,,Gives a role to a user. The role you specify has to be lower in the role hierarchy than your highest role.,.sr @User Guest
+.removerole / .rr,,,Removes a role from a user. The role you specify has to be lower in the role hierarchy than your highest role.,.rr @User Admin
+.renamerole / .renr,,,Renames a role. The role you specify has to be lower in the role hierarchy than your highest role.,".renr ""First role"" SecondRole"
+.removeallroles / .rar,,,Removes all roles which are lower than your highest role in the role hierarchy from the user you specify.,.rar @User
+.createrole / .cr,,,Creates a role with a given name.,.cr Awesome Role
+.deleterole / .dr,,,Deletes a role with a given name.,.dr Awesome Role
+.rolehoist / .rh,,,Toggles whether this role is displayed in the sidebar or not. The role you specify has to be lower in the role hierarchy than your highest role.,".rh Guests / .rh ""Space Wizards"""
+.rolecolor / .roleclr,,,Set a role's color using its hex value. Provide no color in order to see the hex value of the color of the specified role. The role you specify has to be lower in the role hierarchy than your highest role.,.roleclr Admin / .roleclr Admin ffba55
+.mentionrole / .menro,,,"Mentions a role. If the role is not mentionable, bot will make it mentionable for a moment.",.menro RoleName
+.adsarm,,,Toggles the automatic deletion of confirmations for .iam and .iamn commands.,.adsarm
+.asar,,,"Adds a role to the list of self-assignable roles. You can also specify a group. If 'Exclusive self-assignable roles' feature is enabled, users will be able to pick one role per group.",.asar Gamer / .asar 1 Alliance / .asar 1 Horde
+.sargn,,,Sets a self assignable role group name. Provide no name to remove.,.sargn 1 Faction / .sargn 2
+.rsar,,,Removes a specified role from the list of self-assignable roles.,.rsar
+.lsar,,,Lists self-assignable roles. Shows 20 roles per page.,.lsar / .lsar 2
+.togglexclsar / .tesar,,,"Toggles whether the self-assigned roles are exclusive. While enabled, users can only have one self-assignable role per group.",.tesar
+.rolelevelreq / .rlr,,,Set a level requirement on a self-assignable role.,.rlr 5 SomeRole
+.iam,,,Adds a role to you that you choose. Role must be on a list of self-assignable roles.,.iam Gamer
+.iamnot / .iamn,,,Removes a specified role from you. Role must be on a list of self-assignable roles.,.iamn Gamer
+.updatescheck,,,"Select which kind of updates you want to be notified of every 8 hours. You can specify 'release' to check only for new windows releases, 'commit' to be notified of new commits, or 'none' to not get notified.",.updatescheck commit / .updatescheck release
+.scadd,,,"Adds a command to the list of commands which will be executed automatically in the current channel, in the order they were added in, by the bot when it startups up.",.scadd .stats
+.autocmdadd,,,Adds a command to the list of commands which will be executed automatically every X seconds.,.autocmdadd 60 .prune 1000
+.sclist,,,Lists all startup commands in the order they will be executed in.,.sclist
+.autocmds / .autolist,,,Lists all auto commands and the intervals in which they execute.,.autolist
+.wait,,,Used only as a startup command. Waits a certain number of miliseconds before continuing the execution of the following startup commands.,.wait 3000
+.scrm / .autocmdrm,,,Removes a startup or auto command with the provided index.,.scrm 3
+.scclr,,,Removes all startup commands.,.scclr
+.fwmsgs,,,Toggles forwarding of non-command messages sent to bot's DM to the bot owners,.fwmsgs
+.fwtoall,,,Toggles whether messages will be forwarded to all bot owners or only to the first one specified in the credentials.json file,.fwtoall
+.shardstats,,,Stats for shards. Paginated with 25 shards per page.,.shardstats / .shardstats 2
+.restartshard,,,Try (re)connecting a shard with a certain shardid when it dies. No one knows will it work. Keep an eye on the console for errors.,.restartshard 2
+.leave,,,Makes Nadeko leave the server. Either server name or server ID is required.,.leave 123123123331
+.die,,,huts the bot down.,.die
+.restart,,,Restarts the bot. Might not work.,.restart
+.setname / .newnm,,,Gives the bot a new name.,.newnm BotName
+.setnick,,,Changes the nickname of the bot on this server. You can also target other users to change their nickname.,.setnick BotNickname / .setnick @SomeUser New Nickname
+.setstatus,,,Sets the bot's status. (Online/Idle/Dnd/Invisible),.setstatus Idle
+.setavatar / .setav,,,Sets a new avatar image for the NadekoBot. Parameter is a direct link to an image.,.setav http://i.imgur.com/xTG3a1I.jpg
+.setgame,,,"Sets the bots game status to either Playing, Listening, or Watching.",.setgame Playing with snakes. / .setgame Watching anime. / .setgame Listening music.
+.setstream,,,"Sets the bots stream. First parameter is the twitch link, second parameter is stream name.",.setstream TWITCHLINK Hello
+.send,,,Sends a message to someone on a different server through the bot. Separate server and channel/user ids with | and prefix the channel id with c: and the user id with u:.,.send serverid|c:channelid message / .send serverid|u:userid message
+.imagesreload,,,Reloads images bot is using. Safe to use even when bot is being used heavily.,.imagesreload
+.botconfigreload,,,Reloads bot configuration in case you made changes to the BotConfig table either with .sqlexec or manually in the .db file.,.botconfigreload
+.greetdel / .grdel,,,Sets the time it takes (in seconds) for greet messages to be auto-deleted. Set it to 0 to disable automatic deletion.,.greetdel 0 / .greetdel 30
+.greet,,,Toggles anouncements on the current channel when someone joins the server.,.greet
+.greetmsg,,,"Sets a new join announcement message which will be shown in the server's channel. Type %user.mention% if you want to mention the new member. Using it with no message will show the current greet message. You can use embed json from https://eb.nadeko.bot/ instead of a regular text, if you want the message to be embedded.",".greetmsg Welcome, %user.mention%."
+.greetdm,,,"Toggles whether the greet messages will be sent in a DM (This is separate from greet - you can have both, any or neither enabled).",.greetdm
+.greetdmmsg,,,"Sets a new join announcement message which will be sent to the user who joined. Type %user.mention% if you want to mention the new member. Using it with no message will show the current DM greet message. You can use embed json from https://eb.nadeko.bot instead of a regular text, if you want the message to be embedded.",".greetdmmsg Welcome to the server, %user.mention%"
+.bye,,,Toggles anouncements on the current channel when someone leaves the server.,.bye
+.byemsg,,,"Sets a new leave announcement message. Type %user.mention% if you want to show the name the user who left. Type %id% to show id. Using this command with no message will show the current bye message. You can use embed json from https://eb.nadeko.bot/ instead of a regular text, if you want the message to be embedded.",.byemsg %user.mention% has left.
+.byedel,,,Sets the time it takes (in seconds) for bye messages to be auto-deleted. Set it to 0 to disable automatic deletion.,.byedel 0 / .byedel 30
+.timezones,,,Lists all timezones available on the system to be used with .timezone.,.timezones
+.timezone,,,"Sets this guilds timezone. This affects bot's time output in this server (logs, etc..)",.timezone / .timezone GMT Standard Time
+.warn,,,Warns a user.,.warn @b1nzy Very rude person
+.warnexpire / .warne,,,"Sets the number of days after which the warnings will be cleared automatically. This setting works retroactively. If you want to delete the warnings instead of clearing them, you can set the --delete optional parameter. OPTIONS
+--delete (-d) Delete warnings instead of clearing them.",.warne 3 / .warne 6 --delete
+.warnlog,,,See a list of warnings of a certain user.,.warnlog @b1nzy
+.warnlogall,,,See a list of all warnings on the server. 15 users per page.,.warnlogall / .warnlogall 2
+.warnclear / .warnc,,,Clears all warnings from a certain user. You can specify a number to clear a specific one.,.warnclear @PoorDude 3 / .warnclear @PoorDude
+.warnpunish / .warnp,,,"Sets a punishment for a certain number of warnings. You can specify a time string after 'Ban' or *'Mute' punishments to make it a temporary mute/ban. Provide no punishment to remove. Available punishments: Ban, Kick, Softban, Mute, VoiceMute, ChatMute, AddRole, RemoveRoles",.warnp 3 / .warnp 5 Ban / .warnp 5 Mute 2d12h / .warnp 4 AddRole toxic 1h
+.warnpunishlist / .warnpl,,,Lists punishments for warnings.,.warnpunishlist
+.ban / .b,,,Bans a user by ID or name with an optional message. You can specify a time string before the user name to ban the user temporarily.,".b ""@some Guy"" Your behaviour is toxic. / .b 1d12h @b1nzy Come back when u chill"
+.unban,,,Unbans a user with the provided user#discrim or id.,.unban kwoth#1234 / .unban 123123123
+.softban / .sb,,,Bans and then unbans a user by ID or name with an optional message.,".sb ""@some Guy"" Your behaviour is toxic."
+.kick / .k,,,Kicks a mentioned user.,".k ""@some Guy"" Your behaviour is toxic."
+.masskill,,,"Specify a new-line separated list of userid reason. You can use Username#discrim instead of UserId. Specified users will be banned from the current server, blacklisted from the bot, and have all of their flowers taken away.",.masskill BadPerson#1234 Toxic person
+.vcrolerm,,,Removes vcrole associated with the specified voice channel ID. This is useful if your vcrole has been enabled on a VC which has been deleted.,.vcrolerm 123123123123123
+.vcrole,,,Sets or resets a role which will be given to users who join the voice channel you're in when you run this command. Provide no role name to disable. You must be in a voice channel to run this command.,.vcrole SomeRole / .vcrole
+.vcrolelist,,,Shows a list of currently set voice channel roles.,.vcrolelist
+.addcustreact / .acr,,,Add a custom reaction with a trigger and a response. Running this command in server requires the Administration permission. Running this command in DM is Bot Owner only and adds a new global custom reaction. Guide here: http://nadekobot.readthedocs.io/en/latest/custom-reactions/,".acr ""hello"" Hi there %user.mention%"
+.editcustreact / .ecr,,,Edits the custom reaction's response given its ID.,.ecr 123 I'm a magical girl
+.listcustreact / .lcr,,,"Lists global or server custom reactions (20 commands per page). Running the command in DM will list global custom reactions, while running it in server will list that server's custom reactions. Specifying all parameter instead of the number will DM you a text file with a list of all custom reactions.",.lcr 1 / .lcr all
+.listcustreactg / .lcrg,,,"Lists global or server custom reactions (20 commands per page) grouped by trigger, and show a number of responses for each. Running the command in DM will list global custom reactions, while running it in server will list that server's custom reactions.",.lcrg 1
+.showcustreact / .scr,,,Shows a custom reaction's response on a given ID.,.scr 1
+.delcustreact / .dcr,,,"Deletes a custom reaction on a specific index. If ran in DM, it is bot owner only and deletes a global custom reaction. If ran in a server, it requires Administration privileges and removes server custom reaction.",.dcr 5
+.crreact / .crr,,,Sets or resets reactions (up to 3) which will be added to the response message of the CustomReaction with the specified ID. Provide no emojis to reset.,.crr 59 👍 👎 / .crr 59 <a:nFlower:408963839191941120> / .crr 59
+.crca,,,Toggles whether the custom reaction will trigger if the triggering message contains the keyword (instead of only starting with it).,.crca 44
+.crdm,,,Toggles whether the response message of the custom reaction will be sent as a direct message.,.crdm 44
+.crad,,,Toggles whether the message triggering the custom reaction will be automatically deleted.,.crad 59
+.crsreload,,,"Reloads all custom reactions on all shards. Use this if you've made changes to the database while the bot is running, or used .deleteunusedcrnq",.crsreload
+.crclear,,,Deletes all custom reactions on this server.,.crclear
+.economy,,,Breakdown of the current state of the bot's economy. Updates every 3 minutes.,.economy
+.timely,,,Use to claim your 'timely' currency. Bot owner has to specify the amount and the period on how often you can claim your currency.,.timely
+.timelyreset,,,Resets all user timeouts on .timely command.,.timelyreset
+.timelyset,,,"Sets the 'timely' currency allowance amount for users. Second parameter is period in hours, default is 24 hours.",.timelyset 100 / .timelyset 50 12
+.raffle,,,"Prints a name and ID of a random online user from the server, or from the online user in the specified role.",.raffle / .raffle RoleName
+.raffleany,,,"Prints a name and ID of a random user from the server, or from the specified role.",.raffleany / .raffleany RoleName
+.$ / .currency,,,Check how much currency a person has. (Defaults to yourself),.$ / .$ @SomeGuy
+.curtrs,,,Shows your currency transactions on the specified page. Bot owner can see other people's transactions too.,.curtrs 2 / .curtrs @SomeUser 2
+.give,,,Give someone a certain amount of currency. You can specify the reason after the mention.,.give 1 @SomeGuy / .give 5 @CootGurl Ur so pwetty
+.award,,,Awards someone a certain amount of currency. You can specify the reason after the Username. You can also specify a role name to award currency to all users in a role.,.award 100 @person / .award 5 Role Of Gamblers
+.take,,,Takes a certain amount of currency from someone.,.take 1 @SomeGuy
+.rollduel,,,"Challenge someone to a roll duel by specifying the amount and the user you wish to challenge as the parameters. To accept the challenge, just specify the name of the user who challenged you, without the amount.",.rollduel 50 @SomeGuy / .rollduel @Challenger
+.betroll / .br,,,"Bets a certain amount of currency and rolls a dice. Rolling over 66 yields x2 of your currency, over 90 - x4 and 100 x10.",.br 5
+.leaderboard / .lb,,,"Displays the bot's currency leaderboard. OPTIONS
+--clean (-c) Only show users who are on the server.",.lb
+.rps,,,Play a game of Rocket-Paperclip-Scissors with Nadeko. You can bet on it. Multiplier is the same as on betflip.,.rps r 100 / .rps scissors
+.race,,,"Starts a new animal race.  OPTIONS
+--start-time (-s)",.race
+.joinrace / .jr,,,Joins a new race. You can specify an amount of currency for betting (optional). You will get YourBet*(participants-1) back if you win.,.jr / .jr 5
+.blackjack / .bj,,,"Start or join a blackjack game. You must specify the amount you're betting. Use .hit, .stand and .double commands to play. Game is played with 4 decks. Dealer hits on soft 17 and wins draws.",.bj 50
+.hit,,,"In the blackjack game, ask the dealer for an extra card.",.hit
+.stand,,,Finish your turn in the blackjack game.,.stand
+.double,,,"In the blackjack game, double your bet in order to receive exactly one more card, and your turn ends.",.double
+.connect4 / .con4,,,"Creates or joins an existing connect4 game. 2 players are required for the game. Objective of the game is to get 4 of your pieces next to each other in a vertical, horizontal or diagonal line. You can specify a bet when you create a game and only users who bet the same amount will be able to join your game.OPTIONS
+--turn-timer (-t) Turn time in seconds. It has to be between 5 and 60. Default 15.
+--bet (-b) Amount you bet. Default 0.",.connect4
+.eventstart,,,"Starts one of the events seen on public nadeko. Events: reaction, gamestatus OPTIONS
+--amount (-a) Amount of currency each user receives.
+--pot-size (-p) The maximum amount of currency that can be rewarded. 0 means no limit.
+--duration (-d) Number of hours the event should run for. Default 24.",.eventstart reaction / .eventstart reaction -d 1 -a 50 --pot-size 1500
+.rafflecur,,,"Starts or joins a currency raffle with a specified amount. Users who join the raffle will lose the amount of currency specified and add it to the pot. After 30 seconds, random winner will be selected who will receive the whole pot. There is also a mixed mode in which the users will be able to join the game with any amount of currency, and have their chances be proportional to the amount they've bet.",.rafflecur 20 / .rafflecur mixed 15
+.roll,,,Rolls 0-100. If you supply a number X it rolls up to 30 normal dice. If you split 2 numbers with letter d (xdy) it will roll X dice from 1 to y. Y can be a letter 'F' if you want to roll fate dice instead of dnd.,.roll / .roll 7 / .roll 3d5 / .roll 5dF
+.rolluo,,,Rolls X normal dice (up to 30) unordered. If you split 2 numbers with letter d (xdy) it will roll X dice from 1 to y.,.rolluo / .rolluo 7 / .rolluo 3d5
+.nroll,,,"Rolls in a given range. If you specify just one number instead of the range, it will role from 0 to that number.",.nroll 5 / .nroll 5-15
+.draw,,,Draws a card from this server's deck. You can draw up to 10 cards by supplying a number of cards to draw.,.draw / .draw 5
+.drawnew,,,Draws a card from the NEW deck of cards. You can draw up to 10 cards by supplying a number of cards to draw.,.drawnew / .drawnew 5
+.deckshuffle / .dsh,,,Reshuffles all cards back into the deck.,.dsh
+.flip,,,"Flips coin(s) - heads or tails, and shows an image.",.flip / .flip 3
+.betflip / .bf,,,Bet to guess will the result be heads or tails. Guessing awards you 1.95x the currency you've bet (rounded up). Multiplier can be changed by the bot owner.,.bf 5 heads / .bf 3 t
+.shop,,,Lists this server's administrators' shop. Paginated.,.shop / .shop 2
+.buy,,,"Buys an item from the shop on a given index. If buying items, make sure that the bot can DM you.",.buy 2
+.shopadd,,,Adds an item to the shop by specifying type price and name. Available types are role and list. 90% of currency from each purchase will be received by the user who added the item to the shop.,.shopadd role 1000 Rich
+.shoplistadd,,,"Adds an item to the list of items for sale in the shop entry given the index. You usually want to run this command in the secret channel, so that the unique items are not leaked.",.shoplistadd 1 Uni-que-Steam-Key
+.shoprem / .shoprm,,,Removes an item from the shop by its ID.,.shoprm 1
+.slotstats,,,Shows the total stats of the slot command for this bot's session.,.slotstats
+.slottest,,,Tests to see how much slots payout for X number of plays.,.slottest 1000
+.slot / .slots,,,Play Nadeko slots. 1 second cooldown per user.,.slot 5
+.waifureset,,,"Resets your waifu stats, except current waifus.",.waifureset
+.claimwaifu / .claim,,,Claim a waifu for yourself by spending currency. You must spend at least 10% more than her current value unless she set .affinity towards you.,.claim 50 @Himesama
+.waifutransfer,,,Transfer the ownership of one of your waifus to another user. You must pay 10% of your waifu's value.,.waifutransfer @ExWaifu @NewOwner
+.divorce,,,Releases your claim on a specific waifu. You will get some of the money you've spent back unless that waifu has an affinity towards you. 6 hours cooldown.,.divorce @CheatingSloot
+.affinity,,,Sets your affinity towards someone you want to be claimed by. Setting affinity will reduce their .claim on you by 20%. Provide no parameters to clear your affinity. 30 minutes cooldown.,.affinity @MyHusband / .affinity
+.waifus / .waifulb,,,Shows top 9 waifus. You can specify another page to show other waifus.,.waifus / .waifulb 3
+.waifuinfo / .waifustats,,,Shows waifu stats for a target person. Defaults to you if no user is provided.,.waifuinfo @MyCrush / .waifuinfo
+.waifugift / .gift,,,"Gift an item to someone. This will increase their waifu value by 50% of the gifted item's value if you are not their waifu, or 95% if you are. Provide no parameters to see a list of items that you can gift.",.gifts / .gift Rose @Himesama
+.wheeloffortune / .wheel,,,Bets a certain amount of currency on the wheel of fortune. Wheel can stop on one of many different multipliers. Won amount is rounded down to the nearest whole number.,.wheel 10
+.choose,,,Chooses a thing from a list of things,.choose Get up;Sleep;Sleep more
+.8ball,,,Ask the 8ball a yes/no question.,.8ball Is b1nzy a nice guy?
+.rategirl,,,"Use the universal hot-crazy wife zone matrix to determine the girl's worth. It is everything young men need to know about women. At any moment in time, any woman you have previously located on this chart can vanish from that location and appear anywhere else on the chart.",.rategirl @SomeGurl
+.linux,,,Prints a customizable Linux interjection,.linux Spyware Windows
+.acrophobia / .acro,,,"Starts an Acrophobia game. OPTIONS
+--submission-time (-s) Time after which the submissions are closed and voting starts.
+--vote-time (-v) Time after which the voting is closed and the winner is declared.",.acro / .acro -s 30
+.cleverbot,,,"Toggles cleverbot session. When enabled, the bot will reply to messages starting with bot mention in the server. Custom reactions starting with %mention% won't work if cleverbot is enabled.",.cleverbot
+.hangmanlist,,,Shows a list of hangman term types.,.hangmanlist
+.hangman,,,Starts a game of hangman in the channel. Use .hangmanlist to see a list of available term types. Defaults to 'all'.,.hangman / .hangman movies
+.hangmanstop,,,Stops the active hangman game on this channel if it exists.,.hangmanstop
+.nunchi,,,"Creates or joins an existing nunchi game. Users have to count up by 1 from the starting number shown by the bot. If someone makes a mistake (types an incorrect number, or repeats the same number) they are out of the game and a new round starts without them. Minimum 3 users required.",.nunchi
+.pick,,,"Picks the currency planted in this channel. If the plant has a password, you need to specify it.",.pick / .pick passwd
+.plant,,,Spend an amount of currency to plant it in this channel. Default is 1. You can specify the password after the amount. Password has to be alphanumeric and it will be trimmed down to 10 characters if it's longer.,.plant 5 / .plant 10 meow
+.gencurrency / .gc,,,Toggles currency generation on this channel. Every posted message will have chance to spawn currency. Chance is specified by the Bot Owner. (default is 2%),.gc
+.gencurlist / .gclist,,,Shows the list of server and channel ids where gc is enabled. Paginated with 9 per page.,.gclist
+.poll / .ppoll,,,Creates a public poll which requires users to type a number of the voting option in the channel command is ran in.,.ppoll Question?;Answer1;Answ 2;A_3
+.pollstats,,,Shows the poll results without stopping the poll on this server.,.pollstats
+.pollend,,,Stops active poll on this server and prints the results in this channel.,.pollend
+.typestart,,,"Starts a typing contest. OPTIONS
+--start-time (-s) How long does it take for the race to start. Default 5.",.typestart
+.typestop,,,Stops a typing contest on the current channel.,.typestop
+.typeadd,,,Adds a new article to the typing contest.,.typeadd wordswords
+.typelist,,,Lists added typing articles with their IDs. 15 per page.,.typelist / .typelist 3
+.typedel,,,Deletes a typing article given the ID.,.typedel 3
+.tictactoe / .ttt,,,"Starts a game of tic tac toe. Another user must run the command in the same channel in order to accept the challenge. Use numbers 1-9 to play. OPTIONS
+--turn-timer (-t) Turn time in seconds. Default 15.",.ttt
+.trivia / .t,,,"Starts a game of trivia. You can add nohint to prevent hints. First player to get to 10 points wins by default. You can specify a different number. 30 seconds per question. OPTIONS
+--pokemon (-p) Whether it's 'Who's that pokemon?' trivia.
+--nohint Don't show any hints.
+--win-req (-w) Winning requirement. Set 0 for an infinite game. Default 10.
+--question-timer (-q) How long until the question ends. Default 30.
+--timeout (-t) Number of questions of inactivity in order stop. Set 0 for never. Default 10.",.t / .t --timeout 5 -p -w 3 -q 10
+.tl,,,Shows a current trivia leaderboard.,.tl
+.tq,,,Quits current trivia after current question.,.tq
+.modules / .mdls,,,Lists all bot modules.,.modules
+.commands / .cmds,,,"List all of the bot's commands from a certain module. You can either specify the full name or only the first few letters of the module name. OPTIONS
+--view (-v) Specifies how to output the list of commands. 0 - Hide commands which you can't use, 1 - Cross out commands which you can't use, 2 - Show all.",.cmds Admin / .cmds Admin --view 1
+.help / .h,,,"Either shows a help for a single command, or DMs you help link if no parameters are specified.",.h .cmds / .h
+.hgit,,,Generates the commandlist.md file.,.hgit
+.readme / .guide,,,Sends a readme and a guide links to the channel.,.readme / .guide
+.donate,,,Instructions for helping the project financially.,.donate
+.play / .start,,,"If no parameters are specified, acts as .next 1 command. If you specify a song number, it will jump to that song. If you specify a search query, acts as a .q command",.play / .play 5 / .play Dream Of Venice
+.queue / .q,,,Queue a song using keywords or a link. Bot will join your voice channel. You must be in a voice channel.,.q Dream Of Venice
+.queuenext / .qn,,,"Works the same as .queue command, except it enqueues the new song after the current one. You must be in a voice channel.",.qn Dream Of Venice
+.queuesearch / .qs,,,"Search for top 5 youtube song result using keywords, and type the index of the song to play that song. Bot will join your voice channel. You must be in a voice channel.",.qs Dream Of Venice
+.listqueue / .lq,,,Lists 10 currently queued songs per page. Default page is 1.,.lq / .lq 2
+.next / .n,,,"Goes to the next song in the queue. You have to be in the same voice channel as the bot. You can skip multiple songs, but in that case songs will not be requeued if .rcs or .rpl is enabled.",.n / .n 5
+.stop / .s,,,Stops the music and preserves the current song index. Stays in the channel.,.s
+.autodisconnect / .autodc,,,Toggles whether the bot should disconnect from the voice channel once it's done playing all of the songs.,.autodc
+.destroy / .d,,,Completely stops the music and unbinds the bot from the channel. (may cause weird behaviour),.d
+.pause / .p,,,Pauses or Unpauses the song.,.p
+.volume / .vol,,,Sets the music playback volume (0-100%),.vol 50
+.defvol / .dv,,,Sets the default music volume when music playback is started (0-100). Persists through restarts.,.dv 80
+.songremove / .srm,,,"Remove a song by its # in the queue, or 'all' to remove all songs from the queue and reset the song index.",.srm 5
+.playlists / .pls,,,"Lists all playlists. Paginated, 20 per page.",.pls 1
+.deleteplaylist / .delpls,,,Deletes a saved playlist using its id. Works only if you made it or if you are the bot owner.,.delpls 5
+.playlistshow / .plshow,,,"Lists all songs in a playlist spepcified by its id. Paginated, 20 per page.",.plshow 1
+.save,,,Saves a playlist under a certain name. Playlist name must be no longer than 20 characters and must not contain dashes.,.save classical1
+.load,,,Loads a saved playlist using its ID. Use .pls to list all saved playlists and .save to save new ones.,.load 5
+.fairplay / .fp,,,"Toggles fairplay. While enabled, the bot will prioritize songs from users who didn't have their song recently played instead of the song's position in the queue.",.fp
+.songautodelete / .sad,,,Toggles whether the song should be automatically removed from the music queue when it finishes playing.,.sad
+.soundcloudqueue / .sq,,,Queue a soundcloud song using keywords. Bot will join your voice channel. You must be in a voice channel.,.sq Dream Of Venice
+.soundcloudpl / .scpl,,,Queue a Soundcloud playlist using a link.,.scpl soundcloudseturl
+.nowplaying / .np,,,Shows the song that the bot is currently playing.,.np
+.shuffle / .sh,,,Shuffles the current playlist.,.plsh
+.playlist / .pl,,,"Queues up to 500 songs from a youtube playlist specified by a link, or keywords.",.pl <youtube_playlist_link>
+.radio / .ra,,,"Queues a radio stream from a link. It can be a direct mp3 radio stream, .m3u, .pls .asx or .xspf (Usage Video: https://streamable.com/al54)",.ra radio link here
+.local / .lo,,,Queues a local file by specifying a full path.,.lo C:/music/mysong.mp3
+.localplaylst / .lopl,,,Queues all songs from a directory.,.lopl C:/music/classical
+.move / .mv,,,Moves the bot to your voice channel. (works only if music is already playing),.mv
+.movesong / .ms,,,Moves a song from one position to another.,.ms 5>3
+.setmaxqueue / .smq,,,Sets a maximum queue size. Specify no parameters to have no limit.,.smq 50 / .smq
+.setmaxplaytime / .smp,,,Sets a maximum number of seconds (>14) a song can run before being skipped automatically. Set 0 to have no limit.,.smp 0 / .smp 270
+.reptcursong / .rcs,,,Toggles repeat of current song.,.rcs
+.rpeatplaylst / .rpl,,,Toggles repeat of all songs in the queue (every song that finishes is added to the end of the queue).,.rpl
+.autoplay / .ap,,,"Toggles autoplay - When the song is finished, automatically queue a related Youtube song. (Works only for Youtube songs and when queue is empty)",.ap
+.set channel / .smch,,,"Sets the current channel as the default music output channel. This will output playing, finished, paused and removed songs to that channel instead of the channel where the first song was queued in.",.smch
+.unset channel / .usmch,,,"Bot will output playing, finished, paused and removed songs to the channel where the first song was queued in.",.smch
+.autohentai,,,Posts a hentai every X seconds with a random tag from the provided tags. Use | to separate tag groups. Random group will be chosen every time the image is sent. Use + for multiple tags (max 2 per group). 20 seconds minimum. Provide no parameters to disable.,.autohentai 30 yuri+kissing|tail+long_hair / .autohentai
+.autoboobs,,,Posts a boobs every X seconds. 20 seconds minimum. Provide no parameters to disable.,.autoboobs 30 / .autoboobs
+.autobutts,,,Posts a butt every X seconds. 20 seconds minimum. Provide no parameters to disable.,.autobutts 30 / .autobutts
+.hentai,,,"Shows a hentai image from a random website (gelbooru, danbooru, konachan or yandere) with a given tag. Tag is optional but preferred. Only 1 tag allowed.",.hentai yuri
+.hentaibomb,,,"Shows a total 5 images (from gelbooru, danbooru, konachan and yandere). Tag is optional but preferred.",.hentaibomb yuri
+.yandere,,,Shows a random image from yandere with a given tag. Tag is optional but preferred. (multiple tags are appended with +),.yandere tag1+tag2
+.konachan,,,Shows a random hentai image from konachan with a given tag. Tag is optional but preferred.,.konachan yuri
+.e621,,,Shows a random hentai image from e621.net with a given tag. Tag is optional but preferred. (multiple tags are appended with +),.e621 yuri+kissing
+.rule34,,,Shows a random image from rule34.xx with a given tag. Tag is optional but preferred. (multiple tags are appended with +),.rule34 yuri+kissing
+.danbooru,,,Shows a random hentai image from danbooru with a given tag. Tag is optional but preferred. (multiple tags are appended with +),.danbooru yuri+kissing
+.gelbooru,,,Shows a random hentai image from gelbooru with a given tag. Tag is optional but preferred. (multiple tags are appended with +),.gelbooru yuri+kissing
+.derpibooru / .derpi,,,Shows a random image from derpibooru with a given tag. Tag is optional but preferred.,.derpi yuri+kissing
+.boobs,,,Real adult content.,.boobs
+.butts / .ass,,,Real adult content.,.butts / .ass
+. tagbl / . tbl,,,Toggles whether the tag is blacklisted or not in nsfw searches. Provide no parameters to see the list of blacklisted tags.,.nsfwtbl poop
+. cc,,,Clears nsfw cache.,.nsfwcc
+.verbose / .v,,,Toggles or sets whether to show when a command/module is blocked.,.v / .verbose true
+.permrole / .pr,,,Sets a role which can change permissions. Supply no parameters to see the current one. Type 'reset' instead of the role name to reset the currently set permission role. Users with the Administrator server permissions can use permission commands regardless of whether they have the specified role. There is no default permission role,.pr Some Role / .pr reset
+.listperms / .lp,,,Lists whole permission chain with their indexes. You can specify an optional page number if there are a lot of permissions.,.lp / .lp 3
+.removeperm / .rp,,,Removes a permission from a given position in the Permissions list.,.rp 1
+.moveperm / .mp,,,Moves permission from one position to another in the Permissions list.,.mp 2 4
+.srvrcmd / .sc,,,Sets a command's permission at the server level.,".sc ""command name"" disable"
+.srvrmdl / .sm,,,Sets a module's permission at the server level.,.sm ModuleName enable
+.usrcmd / .uc,,,Sets a command's permission at the user level.,".uc ""command name"" enable SomeUsername"
+.usrmdl / .um,,,Sets a module's permission at the user level.,.um ModuleName enable SomeUsername
+.rolecmd / .rc,,,Sets a command's permission at the role level.,".rc ""command name"" disable MyRole"
+.rolemdl / .rm,,,Sets a module's permission at the role level.,.rm ModuleName enable MyRole
+.chnlcmd / .cc,,,Sets a command's permission at the channel level.,".cc ""command name"" enable SomeChannel"
+.chnlmdl / .cm,,,Sets a module's permission at the channel level.,.cm ModuleName enable SomeChannel
+.allchnlmdls / .acm,,,Enable or disable all modules in a specified channel.,.acm enable #SomeChannel
+.allrolemdls / .arm,,,Enable or disable all modules for a specific role.,.arm [enable/disable] MyRole
+.allusrmdls / .aum,,,Enable or disable all modules for a specific user.,.aum enable @someone
+.allsrvrmdls / .asm,,,Enable or disable all modules for your server.,.asm [enable/disable]
+.ubl,,,Either [add]s or [rem]oves a user specified by a Mention or an ID from a blacklist.,.ubl add @SomeUser / .ubl rem 12312312313
+.cbl,,,Either [add]s or [rem]oves a channel specified by an ID from a blacklist.,.cbl rem 12312312312
+.sbl,,,Either [add]s or [rem]oves a server specified by a Name or an ID from a blacklist.,.sbl add 12312321312 / .sbl rem SomeTrashServer
+.cmdcooldown / .cmdcd,,,Sets a cooldown per user for a command. Set it to 0 to remove the cooldown.,".cmdcd ""some cmd"" 5"
+.allcmdcooldowns / .acmdcds,,,Shows a list of all commands and their respective cooldowns.,.acmdcds
+.fwclear,,,Deletes all filtered words on this server.,.fwclear
+.srvrfilterinv / .sfi,,,Toggles automatic deletion of invites posted in the server. Does not affect users with the Administrator permission.,.sfi
+.chnlfilterinv / .cfi,,,Toggles automatic deletion of invites posted in the channel. Does not negate the .srvrfilterinv enabled setting. Does not affect users with the Administrator permission.,.cfi
+.srvrfilterlin / .sfl,,,Toggles automatic deletion of links posted in the server. Does not affect users with the Administrator permission.,.sfl
+.chnlfilterlin / .cfl,,,Toggles automatic deletion of links posted in the channel. Does not negate the .srvrfilterlin enabled setting. Does not affect users with the Administrator permission.,.cfl
+.srvrfilterwords / .sfw,,,Toggles automatic deletion of messages containing filtered words on the server. Does not affect users with the Administrator permission.,.sfw
+.chnlfilterwords / .cfw,,,Toggles automatic deletion of messages containing filtered words on the channel. Does not negate the .srvrfilterwords enabled setting. Does not affect users with the Administrator permission.,.cfw
+.fw,,,Adds or removes (if it exists) a word from the list of filtered words. Use.sfw or .cfw to toggle filtering.,.fw poop
+.lstfilterwords / .lfw,,,Shows a list of filtered words.,.lfw
+.listglobalperms / .lgp,,,Lists global permissions set by the bot owner.,.lgp
+.globalmodule / .gmod,,,Toggles whether a module can be used on any server.,.gmod nsfw
+.globalcommand / .gcmd,,,Toggles whether a command can be used on any server.,.gcmd .stats
+.resetperms,,,Resets the bot's permissions module on this server to the default value.,.resetperms
+.resetglobalperms,,,Resets global permissions set by bot owner.,.resetglobalperms
+.rip,,,Shows the inevitable fate of someone.,.rip @Someone
+.say,,,"Bot will send the message you typed in the specified channel. If you omit the channel name, it will send the message in the current channel. Supports embeds.",.say hi / .say #chat hi
+.weather / .we,,,Shows weather data for a specified city. You can also specify a country after a comma.,".we Moscow, RU"
+.time,,,Shows the current time and timezone in the specified location.,".time London, UK"
+.youtube / .yt,,,Searches youtubes and shows the first result,.yt query
+.movie / .omdb,,,"Queries omdb for movies or series, show first result.",.imdb Batman vs Superman
+.randomcat / .meow,,,Shows a random cat image.,.meow
+.randomdog / .woof,,,Shows a random dog image.,.woof
+.randomfood / .yum,,,Shows a random food image.,.yum
+.randombird / .birb,,,Shows a random bird image.,.birb
+.image / .img,,,Pulls a random image using a search parameter.,.rimg cute kitten
+.lmgtfy,,,Google something for an idiot.,.lmgtfy query
+.shorten,,,"Attempts to shorten an URL, if it fails, returns the input URL.",.shorten https://google.com
+.google / .g,,,Get a Google search link for some terms.,.google query
+.magicthegathering / .mtg,,,Searches for a Magic The Gathering card.,.magicthegathering about face / .mtg about face
+.hearthstone / .hs,,,Searches for a Hearthstone card and shows its image. Takes a while to complete.,.hs Ysera
+.urbandict / .ud,,,Searches Urban Dictionary for a word.,.ud Pineapple
+.define / .def,,,Finds a definition of a word.,.def heresy
+.catfact,,,Shows a random catfact from http://catfacts-api.appspot.com/api/facts,.catfact
+.revav,,,Returns a Google reverse image search for someone's avatar.,.revav @SomeGuy
+.revimg,,,Returns a Google reverse image search for an image from a link.,.revimg Image link
+.safebooru,,,Shows a random image from safebooru with a given tag. Tag is optional but preferred. (multiple tags are appended with +),.safebooru yuri+kissing
+.wikipedia / .wiki,,,Gives you back a wikipedia link,.wiki query
+.color / .clr,,,Shows you pictures of colors which correspond to the inputed hex values. Max 10.,.color 00ff00 / .color f00 0f0 00f
+.avatar / .av,,,Shows a mentioned person's avatar.,.av @SomeGuy
+.wikia,,,Gives you back a wikia link,.wikia mtg Vigilance / .wikia mlp Dashy
+.bible,,,Shows bible verse. You need to supply book name and chapter:verse,.bible genesis 3:19
+.steam,,,Returns a store link for a steam game with the specified name. It doesn't work very well because bundles.,.steam Sakura Agent
+.novel,,,Searches for a novel on http://novelupdates.com/. You have to provide an exact name.,.novel the nine cauldrons
+.mal,,,Shows basic info from a MyAnimeList profile.,.mal straysocks
+.anime / .ani,,,Queries anilist for an anime and shows the first result.,.ani aquarion evol
+.manga / .mang,,,Queries anilist for a manga and shows the first result.,.mq Shingeki no kyojin
+.crypto / .c,,,Shows basic stats about a cryptocurrency from coinmarketcap.com. You can use either a name or an abbreviation of the currency.,.c btc / .c bitcoin
+.feed / .feedadd,,,Subscribes to a feed. Bot will post an update up to once every 10 seconds. You can have up to 10 feeds on one server. All feeds must have unique URLs.,.feed https://www.rt.com/rss/
+.feedremove / .feedrm,,,Stops tracking a feed on the given index. Use .feeds command to see a list of feeds and their indexes.,.feedremove 3
+.feeds / .feedlist,,,Shows the list of feeds you've subscribed to on this server.,.feeds
+.yomama / .ym,,,Shows a random joke from http://api.yomomma.info/,.ym
+.randjoke / .rj,,,Shows a random joke from http://tambal.azurewebsites.net/joke/random,.rj
+.chucknorris / .cn,,,Shows a random Chuck Norris joke from http://api.icndb.com/jokes/random/,.cn
+.wowjoke,,,Get one of Kwoth's penultimate WoW jokes.,.wowjoke
+.magicitem / .mi,,,Shows a random magic item from https://1d4chan.org/wiki/List_of_/tg/%27s_magic_items,.mi
+.memelist,,,Pulls a list of memes you can use with .memegen from http://memegen.link/templates/,.memelist
+.memegen,,,Generates a meme from memelist with top and bottom text.,".memegen biw ""gets iced coffee"" ""in the winter"""
+.osu,,,Shows osu! stats for a player.,.osu Name / .osu Name taiko
+.gatari,,,Shows osu!gatari stats for a player.,.gatari Name / .gatari Name ctb
+.osu5,,,Displays a user's top 5 plays.,.osu5 Name
+.pathofexile / .poe,,,Searches characters for a given Path of Exile account. May specify league name to filter results.,".poe ""Zizaran"""
+.pathofexileleagues / .poel,,,Returns a list of the main Path of Exile leagues.,.poel
+.pathofexilecurrency / .poec,,,Returns the chaos equivalent of a given currency or exchange rate between two currencies.,".poec Standard ""Mirror of Kalandra"""
+.placelist,,,Shows the list of available tags for the .place command.,.placelist
+.place,,,Shows a placeholder image of a given tag. Use .placelist to see all available tags. You can specify the width and height of the image as the last two optional parameters.,.place Cage / .place steven 500 400
+.pokemon / .poke,,,Searches for a pokemon.,.poke Sylveon
+.pokemonability / .pokeab,,,Searches for a pokemon ability.,.pokeab overgrow
+.streamadd / .sta,,,Notifies this channel when the stream on the specified URL goes online or offline. Offline notifications will only show if you enable .streamoff. Maximum 10 per server.,.sta twitch.tv/someguy
+.streamrm / .strm,,,Stops following the stream on the specified index. (use .stl to see indexes),.strm 2
+.streamlist / .stl,,,Lists all streams you are following on this server and their respective indexes.,.stl
+.streamoff / .sto,,,Toggles whether the bot will also notify when added streams go offline.,.sto
+.streammsg / .stm,,,Sets the message which will show when the stream on the specified index comes online.,.stm 1 Hey @erryone i'm back online!1!!
+.streamcheck / .stc,,,Retrieves information about a stream.,.cs https://twitch.tv/somedude
+.translate / .trans,,,Translates from>to text. From the given language to the destination language.,.trans en>fr Hello
+.autotrans / .at,,,"Starts automatic translation of all messages by users who set their .atl in this channel. You can set ""del"" parameter to automatically delete all translated user messages.",.at / .at del
+.autotranslang / .atl,,,Sets your source and target language to be used with .at. Specify no parameters to remove previously set value.,.atl en>fr
+.translangs,,,Lists the valid languages for translation.,.translangs
+.xkcd,,,"Shows a XKCD comic. Specify no parameters to retrieve a random one. Number parameter will retrieve a specific comic, and ""latest"" will get the latest one.",.xkcd / .xkcd 1400 / .xkcd latest
+.togethertube / .totube,,,Creates a new room on https://togethertube.com and shows the link in the chat.,.totube
+.whosplaying / .whpl,,,Shows a list of users who are playing the specified game.,.whpl Overwatch
+.inrole,,,"Lists every person from the specified role on this server. You can use role ID, role name.",.inrole Some Role
+.checkperms,,,Checks yours or bot's user-specific permissions on this channel.,.checkperms me / .checkperms bot
+.userid / .uid,,,Shows user ID.,.uid / .uid @SomeGuy
+.roleid / .rid,,,Shows the id of the specified role.,.rid Some Role
+.channelid / .cid,,,Shows current channel ID.,.cid
+.serverid / .sid,,,Shows current server ID.,.sid
+.roles,,,"List roles on this server or roles of a user if specified. Paginated, 20 roles per page.",.roles 2 / .roles @Someone
+.channeltopic / .ct,,,Sends current channel's topic as a message.,.ct
+.stats,,,Shows some basic stats for Nadeko.,.stats
+.showemojis / .se,,,Shows a name and a link to every SPECIAL emoji in the message.,.se A message full of SPECIAL emojis
+.listservers,,,Lists servers the bot is on with some basic info. 15 per page.,.listservers 3
+.savechat,,,Saves a number of messages to a text file and sends it to you.,.savechat 150
+.ping,,,Ping the bot to see if there are latency issues.,.ping
+.botconfigedit / .bce,,,Sets one of available bot config settings to a specified value. Use the command without any parameters to get a list of available settings.,.bce CurrencyName b1nzy / .bce
+.calculate / .calc,,,Evaluate a mathematical expression.,.calc 1+1
+.calcops,,,Shows all available operations in the .calc command,.calcops
+.aliasesclear / .aliasclear,,,Deletes all aliases on this server.,.aliasclear
+.alias / .cmdmap,,,Create a custom alias for a certain Nadeko command. Provide no alias to remove the existing one.,".alias allin .bf all h / .alias ""linux thingy"" >loonix Spyware Windows"
+.aliaslist / .cmdmaplist,,,Shows the list of currently set aliases. Paginated.,.aliaslist / .aliaslist 3
+.serverinfo / .sinfo,,,"Shows info about the server the bot is on. If no server is supplied, it defaults to current one.",.sinfo Some Server
+.channelinfo / .cinfo,,,"Shows info about the channel. If no channel is supplied, it defaults to current one.",.cinfo #some-channel
+.userinfo / .uinfo,,,"Shows info about the user. If no user is supplied, it defaults a user running the command.",.uinfo @SomeUser
+.activity,,,Checks for spammers.,.activity
+.invitecreate / .invcr,,,"Creates a new invite which has infinite max uses and never expires. OPTIONS
+--max-uses (-m) Maximum number of times the invite can be used. Default 0 (never).
+--unique (-u) Not setting this flag will result in bot getting the existing invite with the same settings if it exists, instead of creating a new one.
+--temporary (-t) If this flag is set, the user will be kicked from the guild once they close their client.
+--expire (-e) Time in seconds to expire the invite. Default 0 (no expiry).",.invcr
+.invitelist / .invlist,,,Lists all invites for this channel. Paginated with 9 per page.,.invitelist / .invlist 3
+.invitedelete / .invrm,,,Deletes an invite on the specified index. Use .invitelist to see the list of invites.,.invrm 2
+.parewrel,,,Forces the update of the list of patrons who are eligible for the reward.,.parewrel
+.clparew / .claparew,,,Claim patreon rewards. If you're subscribed to bot owner's patreon you can use this command to claim your rewards - assuming bot owner did setup has their patreon key.,.clparew
+.listquotes / .liqu,,,Lists all quotes on the server ordered alphabetically or by ID. 15 Per page.,.liqu 3 / .liqu 3 id
+... ,,,Shows a random quote with a specified name., ...abc
+.qsearch,,,Shows a random quote for a keyword that contains any text specified in the search.,.qsearch keyword text
+.quoteid / .qid,,,Displays the quote with the specified ID number. Quote ID numbers can be found by typing .liqu [num] where [num] is a number of a page which contains 15 quotes.,.qid 123456
+.say .,,,Adds a new quote with the specified name and message.,.. sayhi Hi
+.quotedel / .qdel,,,Deletes a quote with the specified ID. You have to be either server Administrator or the creator of the quote to delete it.,.qdel 123456
+.delallq / .daq,,,Deletes all quotes on a specified keyword.,.delallq kek
+.remind,,,Sends a message to you or a channel after certain amount of time (max 2 months). First parameter is me/here/'channelname'. Second parameter is time in a descending order (mo>w>d>h>m) example: 1w5d3h10m. Third parameter is a (multiword) message.,.remind me 1d5h Do something / .remind #general 1m Start now!
+.remindlist / .remindl,,,Lists all reminders you created. Paginated.,.remindlist 1
+.reminddel / .remindrm,,,Deletes a reminder on the specified index.,.remindrm 3
+.remindtemplate,,,Sets message for when the remind is triggered.,".remindtemplate %user.mention%, do %message%!"
+.repeatinvoke / .repinv,,,Immediately shows the repeat message on a certain index and restarts its timer.,.repinv 1
+.repeatremove / .reprm,,,Removes a repeating message on a specified index. Use .repeatlist to see indexes.,.reprm 2
+.repeat,,,"Repeat a message once every -i number of minutes in the current channel. You can instead specify time of day for the message to be repeated daily (make sure you've set your server's timezone). If you've specified time of day, you can still override the default daily interval with your own -i. For example 17:30 -i 180 -m ""hi there"" will post at 17:30 and then every 3 hours after. You can have up to 5 repeating messages on the server in total. OPTIONS
+--message (-m) Message to be repeated
+--no-redundant (-n) Whether the message should be reposted if the last message in the channel is this same message.
+--interval (-i) How frequently the repeating message is posted, in minutes.",".repeat -i 5 -m ""Hello there"" -n / .repeat 17:30 -m ""tea time"""
+.repeatlist / .replst,,,Shows currently repeating messages and their indexes.,.repeatlist
+.streamrole,,,"Sets a role which is monitored for streamers (FromRole), and a role to add if a user from 'FromRole' is streaming (AddRole). When a user from 'FromRole' starts streaming, they will receive an 'AddRole'. Provide no parameters to disable",".streamrole ""Eligible Streamers"" ""Featured Streams"""
+.streamrolekw / .srkw,,,Sets keyword which is required in the stream's title in order for the streamrole to apply. Provide no keyword in order to reset.,.srkw / .srkw PUBG
+.streamrolebl / .srbl,,,Adds or removes a blacklisted user. Blacklisted users will never receive the stream role.,.srbl add @b1nzy#1234 / .srbl rem @b1nzy#1234
+.streamrolewl / .srwl,,,Adds or removes a whitelisted user. Whitelisted users will receive the stream role even if they don't have the specified keyword in their stream title.,.srwl add @b1nzy#1234 / .srwl rem @b1nzy#1234
+.convertlist,,,List of the convertible dimensions and currencies.,.convertlist
+.convert,,,Convert quantities. Use .convertlist to see supported dimensions and currencies.,.convert m km 1000
+.verboseerror / .ve,,,Toggles or sets whether the bot should print command errors when a command is incorrectly used.,.ve / .ve false
+.experience / .xp,,,Shows your xp stats. Specify the user to show that user's stats instead.,.xp / .xp @someguy
+.xplvluprewards / .xprews,,,Shows currently set level up rewards.,.xprews
+.xprolereward / .xprr,,,Sets a role reward on a specified level. Provide no role name in order to remove the role reward.,.xprr 3 Social
+.xpcurreward / .xpcr,,,Sets a currency reward on a specified level. Provide no amount in order to remove the reward.,.xpcr 3 50
+.xpnotify / .xpn,,,"Sets how the bot should notify you when you get a server or global level. You can set dm (for the bot to send a direct message), channel (to get notified in the channel you sent the last message in) or none to disable.",.xpn global dm / .xpn server channel
+.xpexclude / .xpex,,,"Exclude a channel, role or current server from the xp system.",.xpex Role Excluded-Role / .xpex Server
+.xpexclusionlist / .xpexl,,,"Shows the roles and channels excluded from the XP system on this server, as well as whether the whole server is excluded.",.xpexl
+.xpleaderboard / .xplb,,,"Shows current server's xp leaderboard. OPTIONS
+--clean (-c) Only show users who are on the server.",.xplb
+.xpgleaderboard / .xpglb,,,Shows the global xp leaderboard.,.xpglb
+.xpadd,,,Adds xp to a user on the server. This does not affect their global ranking. You can use negative values.,.xpadd 100 @b1nzy
+.xptempreload / .xptr,,,Reloads the xp template file. Xp template file allows you to customize the position and color of elements on the .xp card.,.xptr
+.clubapps,,,Shows the list of users who have applied to your club. Paginated. You must be club owner to use this command.,.clubapps 2
+.clubapply,,,"Apply to join a club. You must meet that club's minimum level requirement, and not be on its ban list.",.clubapply b1nzy's friends#123
+.clubaccept,,,Accept a user who applied to your club.,.clubaccept b1nzy#1337
+.clubleave,,,Leaves the club you're currently in.,.clubleave
+.clubkick,,,Kicks the user from the club. You must be the club owner. They will be able to apply again.,.clubkick b1nzy#1337
+.clubban,,,Bans the user from the club. You must be the club owner. They will not be able to apply again.,.clubban b1nzy#1337
+.clubunban,,,Unbans the previously banned user from the club. You must be the club owner.,.clubunban b1nzy#1337
+.clublevelreq,,,Sets the club required level to apply to join the club. You must be club owner. You can't set this number below 5.,.clublevelreq 7
+.clubdesc,,,Sets the club description. Maximum 150 characters. Club owner only.,.clubdesc This is the best club please join.
+.clubdisband,,,Disbands the club you're the owner of. This action is irreversible.,.clubdisband
+.clublb,,,Shows club rankings on the specified page.,.clublb 2
+.clubtransfer,,,Transfers the ownership of the club to another member of the club.,.clubtransfer @b1nzy
+.clubadmin,,,"Assigns (or unassigns) staff role to the member of the club. Admins can ban, kick and accept applications.",.clubadmin
+.clubcreate,,,Creates a club. You must be at least level 5 and not be in the club already.,.clubcreate b1nzy's friends
+.clubicon,,,Sets the club icon.,.clubicon https://i.imgur.com/htfDMfU.png
+.clubinfo,,,Shows information about the club.,.clubinfo b1nzy's friends#123
+.clubbans,,,Shows the list of users who have banned from your club. Paginated. You must be club owner to use this command.,.clubbans 2
+.xpreset,,,"Resets specified user's XP, or the XP of all users in the server. You can't reverse this action.",.xpreset @b1nzy / .xpreset
